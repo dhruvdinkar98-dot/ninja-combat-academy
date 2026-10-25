@@ -41,6 +41,17 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
+    
+    <!-- PWA & Mobile Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c5161d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+
+    <!-- Preload Critical LCP Hero Image -->
+    <link rel="preload" as="image" href="assets/images/founder_sensei_dhruv.png" fetchpriority="high">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css?v=3.5.0">
     <link rel="stylesheet" href="assets/css/glass-ui.css?v=3.5.0">
@@ -1053,5 +1064,45 @@
     <script src="assets/js/kuji-nexus.js"></script>
     <script src="assets/js/premium-features.js?v=3.5.0"></script>
     <script src="assets/js/main.js?v=3.5.0"></script>
+
+    <!-- 20. FLOATING SENSEI WHATSAPP SPEED WIDGET -->
+    <a href="https://wa.me/918865839038?text=Konnichiwa%20Sensei%20Dhruv!%20I%20am%20interested%20in%20joining%20Ninja%20Combat%20Academy%20in%20Mathura.%20Please%20share%20training%20details." 
+       target="_blank" rel="noopener" class="floating-whatsapp-btn" id="floating-whatsapp" aria-label="Chat with Sensei Ninja Dhruv on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.172 8.172 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.07l-.29-.17-3.03.8 81-2.95-.19-.3a8.165 8.165 0 01-1.25-4.35c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.39-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        <span class="wa-tooltip">Direct WhatsApp with Sensei</span>
+    </a>
+
+    <!-- 21. FLOATING BACK TO TOP BUTTON -->
+    <button class="back-to-top-btn" id="back-to-top" aria-label="Back to top">▲</button>
+
+    <!-- Speed Optimization & Service Worker PWA Script -->
+    <script>
+      // 1. Service Worker PWA for Instant Caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').then((reg) => {
+            console.log('NCA Speed Engine ServiceWorker Active:', reg.scope);
+          }).catch((err) => {
+            console.log('SW registration note:', err);
+          });
+        });
+      }
+
+      // 2. Back to Top Smooth Scroll
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+          } else {
+            backToTopBtn.classList.remove('visible');
+          }
+        }, { passive: true });
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    </script>
+
 </body>
 </html>

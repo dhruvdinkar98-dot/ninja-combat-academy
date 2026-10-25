@@ -1,0 +1,23 @@
+{
+  "name": "Ninja Combat Academy - Sensei Ninja Dhruv",
+  "short_name": "Ninja Academy",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#c5161d",
+  "description": "Authentic Ninjutsu, Kenjutsu & Martial Arts Academy in Mathura, UP founded by Sensei Ninja Dhruv (3rd Dan Black Belt).",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
